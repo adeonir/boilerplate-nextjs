@@ -1,14 +1,17 @@
 import { Container, Description, Illustration, Logo, Title } from './styles'
 
-export const Main = () => (
+export const Main = ({
+  title = 'React Avançado',
+  description = 'NextJS, ReactJS, TypeScript e Styled-Components',
+}) => (
   <Container>
     <Logo
       src="/assets/logo.svg"
       alt="Imagem de um átomo e React Avançado escrito ao lado"
     />
 
-    <Title>React Avançado</Title>
-    <Description>NextJS, ReactJS, TypeScript e Styled-Components</Description>
+    <Title>{title}</Title>
+    <Description>{description}</Description>
 
     <Illustration
       src="/assets/hero-illustration.svg"
