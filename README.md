@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img src=".github/ssets/hero-illustration.svg" atl="Um desenvolvedor caminhando e uma tela com código e também escrito a palavra Next.JS" />
+  <img src=".github/assets/hero-illustration.svg" atl="Um desenvolvedor caminhando e uma tela com código e também escrito a palavra Next.JS" />
 </p>
 
 # NextJS Boilerplate
