@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img src=".github/logo-gh.svg" atl="React Avançado" />
+  <img src=".github/assets/logo-gh.svg" atl="React Avançado" />
 </h1>
 
 <p align="center">
-  <img src=".github/hero-illustration.svg" atl="Um desenvolvedor caminhando e uma tela com código e também escrito a palavra Next.JS" />
+  <img src=".github/ssets/hero-illustration.svg" atl="Um desenvolvedor caminhando e uma tela com código e também escrito a palavra Next.JS" />
 </p>
 
 # NextJS Boilerplate
@@ -24,6 +24,7 @@ This is a [Next.js](https://nextjs.org/) boilerplate to be used in the course [R
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
+- [Plop](https://plopjs.com/)
 
 ## Getting Started
 
@@ -55,6 +56,7 @@ You can start editing the page by modifying `src/pages/index.tsx`. The page auto
 - `lint`: runs the linter in all components and pages
 - `test`: runs jest to test all components and pages
 - `test:watch`: runs jest in watch mode
+- `generate`: runs plop to generate component files
 - `storybook`: runs storybook on `localhost:6006`
 - `storybook:build`: create the build version of storybook
 
