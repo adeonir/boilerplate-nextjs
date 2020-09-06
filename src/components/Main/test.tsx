@@ -9,7 +9,7 @@ describe('<Main />', () => {
     } = render(<Main />)
 
     expect(
-      screen.getByRole('heading', { name: /react avançado/i })
+      screen.getByRole('heading', { name: /react avançado/i }),
     ).toBeInTheDocument()
 
     expect(firstChild).toMatchSnapshot()
@@ -20,6 +20,6 @@ describe('<Main />', () => {
       container: { firstChild },
     } = render(<Main />)
 
-    expect(firstChild).toHaveStyle({ 'background-color': '#051330' })
+    expect(firstChild).toHaveStyleRule(`background-color: #051330`)
   })
 })

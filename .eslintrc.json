@@ -29,7 +29,13 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "prettier", "@typescript-eslint", "simple-import-sort"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "prettier",
+    "@typescript-eslint",
+    "simple-import-sort"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
@@ -37,10 +43,11 @@
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "import/prefer-default-export": "off",
+    "simple-import-sort/sort": "error",
     "sort-imports": "off",
-    "import/order": "off",
-    "simple-import-sort/sort": "error"
+    "import/order": "off"
   },
   "overrides": [
     {
