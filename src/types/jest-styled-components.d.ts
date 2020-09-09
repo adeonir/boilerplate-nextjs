@@ -2,6 +2,7 @@
 // https://github.com/styled-components/jest-styled-components/blob/master/typings/index.d.ts
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/ban-types */
 import { NewPlugin, Plugin } from 'pretty-format'
 

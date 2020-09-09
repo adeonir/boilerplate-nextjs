@@ -20,6 +20,6 @@ describe('<Main />', () => {
       container: { firstChild },
     } = render(<Main />)
 
-    expect(firstChild).toHaveStyleRule(`background-color: #051330`)
+    expect(firstChild).toHaveStyleRule('background-color', '#051330')
   })
 })
