@@ -1,15 +1,17 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.main`
-  align-items: center;
-  background-color: #051330;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  padding: 4rem;
-  text-align: center;
+  ${({ theme }) => css`
+    align-items: center;
+    background-color: ${theme.colors.darkBackground};
+    color: ${theme.colors.white};
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 4rem;
+    text-align: center;
+  `}
 `
 
 export const Logo = styled.img`

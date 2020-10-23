@@ -1,10 +1,11 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-import { GlobalStyles } from 'styles'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles, theme } from 'styles'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         <title>React Avançado</title>
         <link rel="shortcut" href="/assets/icon-512.png" />
@@ -22,7 +23,7 @@ function App({ Component, pageProps }: AppProps) {
 
       <GlobalStyles />
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 

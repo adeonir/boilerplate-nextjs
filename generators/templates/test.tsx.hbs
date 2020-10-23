@@ -1,17 +1,18 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import { {{pascalCase name}} } from '.'
 
 describe('<{{pascalCase name}} />', () => {
-  it('should render the heading', () => {
+  it('should render correctly', () => {
     const {
-      container: { firstChild },
-    } = render(<{{pascalCase name}} />)
+      container,
+    } = renderWithTheme(<{{pascalCase name}} />)
 
     expect(
       screen.getByRole('heading', { name: /react avançado/i })
     ).toBeInTheDocument()
 
-    expect(firstChild).toMatchSnapshot()
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
