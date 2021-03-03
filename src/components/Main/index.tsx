@@ -1,21 +1,16 @@
-import { Container, Description, Illustration, Logo, Title } from './styles'
+import * as S from './styles'
 
 export const Main = ({
-  title = 'React Avançado',
-  description = 'NextJS, ReactJS, TypeScript e Styled-Components',
+  title = 'NextJS Boilerplate',
+  description = 'NextJS, ReactJS, TypeScript, Styled-Components, Storybook and Testing-Library',
 }) => (
-  <Container>
-    <Logo
-      src="/assets/logo.svg"
-      alt="Imagem de um átomo e React Avançado escrito ao lado"
-    />
+  <S.Container>
+    <S.Title>{title}</S.Title>
+    <S.Description>{description}</S.Description>
 
-    <Title>{title}</Title>
-    <Description>{description}</Description>
-
-    <Illustration
+    <S.Illustration
       src="/assets/hero-illustration.svg"
-      alt="Um desenvolvedor caminhando e uma tela com código e também escrito a palavra Next.JS"
+      alt="A developer walking and a screen with the text NextJS"
     />
-  </Container>
+  </S.Container>
 )

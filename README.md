@@ -1,16 +1,12 @@
-<h1 align="center">
-  <img src=".github/assets/logo-gh.svg" atl="React Avançado" />
-</h1>
-
 <p align="center">
-  <img src=".github/assets/hero-illustration.svg" atl="Um desenvolvedor caminhando e uma tela com código e também escrito a palavra Next.JS" />
+  <img src=".github/assets/hero-illustration.svg" atl="A developer walking and a screen with the text NextJS" />
 </p>
 
 # NextJS Boilerplate
 
 ---
 
-This is a [Next.js](https://nextjs.org/) boilerplate to be used in the course [React Avançado](https://reactavancado.com.br).
+This is a [Next.js](https://nextjs.org/) boilerplate based in the course [React Avançado](https://reactavancado.com.br).
 
 ## What is inside?
 
@@ -31,17 +27,21 @@ This is a [Next.js](https://nextjs.org/) boilerplate to be used in the course [R
 You can use this as a boilerplate:
 
 ```bash
-npx create-next-app -e https://github.com/adeonir/nextjs-boilerplate new-project
+npx create-next-app -e https://github.com/adeonir/nextjs-boilerplate
 
 # or
 
-yarn create next-app -e https://github.com/adeonir/nextjs-boilerplate new-project
+yarn create next-app -e https://github.com/adeonir/nextjs-boilerplate
 ```
 
 Then, run the development server:
 
 ```bash
-yarn start
+yarn dev
+
+# or
+
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -50,8 +50,9 @@ You can start editing the page by modifying `src/pages/index.tsx`. The page auto
 
 ## Commands
 
-- `start`: runs your application on `localhost:3000`
+- `dev`: runs your application on `localhost:3000`
 - `build`: creates the production build version
+- `export`: creates the production build version and exports to deploy
 - `serve`: starts a simple server with the build production code
 - `lint`: runs the linter in all components and pages
 - `test`: runs jest to test all components and pages

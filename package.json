@@ -14,7 +14,7 @@
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "storybook:build": "build-storybook -s ./public",
-    "prepare": "husky install"
+    "postinstall": "husky install"
   },
   "husky": {
     "hooks": {
@@ -22,7 +22,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*": [
+    "src/**/*.{ts,tsx}": [
       "yarn lint --fix",
       "yarn prettier --write",
       "yarn test --findRelatedTests --bail"
