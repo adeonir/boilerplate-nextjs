@@ -1,9 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
-    "jest": true,
-    "node": true
+    "es2021": true
   },
   "settings": {
     "react": {
@@ -13,31 +11,26 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:@typescript-eslint/recommended"
   ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "plugins": [
     "react",
     "react-hooks",
-    "prettier",
     "@typescript-eslint",
-    "simple-import-sort"
+    "simple-import-sort",
+    "import"
   ],
   "rules": {
-    "prettier/prettier": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -45,27 +38,25 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-var-requires": "off",
-    "import/order": "off",
+    "@typescript-eslint/camelcase": "off",
     "import/prefer-default-export": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-uses-react": "off",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "simple-import-sort/sort": "error",
-    "sort-imports": "off",
+    "react/require-default-props": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "import/first": "error",
+    "import/order": "off",
     "no-console": [
       2,
       {
         "allow": ["warn", "error"]
       }
     ]
-  },
-  "overrides": [
-    {
-      "files": ["*.js"],
-      "rules": {
-        "@typescript-eslint/no-var-requires": "off"
-      }
-    }
-  ]
+  }
 }

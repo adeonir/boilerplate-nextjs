@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 module.exports = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
