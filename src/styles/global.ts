@@ -1,18 +1,6 @@
-import {
-  createGlobalStyle,
-  css,
-  DefaultTheme,
-  GlobalStyleComponent,
-} from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
-type GlobalStylesProps = {
-  removeBg?: boolean
-}
-
-export const GlobalStyles: GlobalStyleComponent<
-  GlobalStylesProps,
-  DefaultTheme
-> = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
     outline: 0;
