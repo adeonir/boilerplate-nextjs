@@ -33,9 +33,6 @@ module.exports = (plop) => {
         path: '../src/components/{{pascalCase name}}/test.tsx',
         templateFile: 'templates/test.tsx.hbs',
       },
-      {
-        type: 'lint',
-      },
     ],
   })
 
