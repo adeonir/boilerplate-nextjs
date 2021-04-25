@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 
+import { theme } from '.'
+
 export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
@@ -13,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  ${({ theme }) => css`
+  ${() => css`
     html {
       font-size: 62.5%;
       min-width: 320px;
@@ -24,7 +26,6 @@ export const GlobalStyles = createGlobalStyle`
       font-size: ${theme.font.sizes.medium};
       scroll-behavior: smooth;
       line-height: 1.2;
-      scroll-behavior: smooth;
     }
 
     html,
