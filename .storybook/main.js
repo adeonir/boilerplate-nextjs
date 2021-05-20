@@ -5,4 +5,7 @@ module.exports = {
     config.resolve.modules.push(`${process.cwd()}/src`)
     return config
   },
+  features: {
+    postcss: false,
+  },
 }
