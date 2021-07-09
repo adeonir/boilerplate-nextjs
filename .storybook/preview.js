@@ -1,27 +1,14 @@
-import { ThemeProvider } from 'styled-components'
-import { GlobalStyles, theme } from 'styles'
+import { addDecorator } from '@storybook/react'
+import { withNextRouter } from 'storybook-addon-next-router'
+import { GlobalStyles } from 'styles'
 
-export const parameters = {
-  backgrounds: {
-    default: 'light',
-    values: [
-      {
-        name: 'light',
-        value: theme.colors.white,
-      },
-      {
-        name: 'dark',
-        value: theme.colors.darkBackground,
-      },
-    ],
-  },
-}
+addDecorator(withNextRouter())
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={theme}>
+    <>
       <GlobalStyles />
       <Story />
-    </ThemeProvider>
+    </>
   ),
 ]
