@@ -1,17 +1,17 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+
+import { theme } from 'styles'
 
 export const Container = styled.main`
-  ${({ theme }) => css`
-    align-items: center;
-    background-color: ${theme.colors.darkBackground};
-    color: ${theme.colors.white};
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    padding: 4rem;
-    text-align: center;
-  `}
+  align-items: center;
+  background-color: ${theme.colors.darkBackground};
+  color: ${theme.colors.white};
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 4rem;
+  text-align: center;
 `
 
 export const Title = styled.h1`

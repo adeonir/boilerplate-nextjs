@@ -1,5 +1,4 @@
-import { screen } from '@testing-library/react'
-import { renderWithTheme } from 'utils/tests/helpers'
+import { render, screen } from 'utils/test-utils'
 
 import { {{pascalCase name}} } from '.'
 
@@ -7,7 +6,7 @@ describe('<{{pascalCase name}} />', () => {
   it('should render correctly', () => {
     const {
       container,
-    } = renderWithTheme(<{{pascalCase name}} />)
+    } = render(<{{pascalCase name}} />)
 
     expect(
       screen.getByRole('heading', { name: /react avançado/i })
