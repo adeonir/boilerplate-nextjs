@@ -54,7 +54,6 @@ You can start editing the page by modifying `src/pages/index.tsx`. The page auto
 - `build`: creates the production build version
 - `export`: creates the production build version and exports to deploy
 - `serve`: starts a simple server with the build production code
-- `next:lint`: runs the next conformance lint
 - `lint`: runs the linter in all components and pages
 - `test`: runs jest to test all components and pages
 - `test:watch`: runs jest in watch mode
