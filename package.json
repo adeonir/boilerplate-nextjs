@@ -12,7 +12,7 @@
     "test:watch": "jest --maxWorkers=50% --watch",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
-    "storybook": "start-storybook -s ./public -p 6006",
+    "storybook": "start-storybook -s ./public -p 6006 --quiet",
     "storybook:build": "build-storybook -s ./public",
     "prepare": "husky install"
   },
@@ -39,7 +39,10 @@
     "@babel/core": "^7.15.5",
     "@babel/preset-typescript": "^7.15.0",
     "@babel/runtime": "^7.15.4",
+    "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/builder-webpack5": "^6.3.8",
+    "@storybook/manager-webpack5": "^6.3.8",
     "@storybook/react": "^6.3.8",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -69,5 +72,10 @@
     "prettier": "2.4.0",
     "storybook-addon-next-router": "^3.0.8",
     "typescript": "^4.4.2"
+  },
+  "resolutions": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.5",
+    "webpack": "5"
   }
 }
