@@ -46,12 +46,6 @@
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
     "import/first": "error",
-    "import/order": "off",
-    "no-console": [
-      2,
-      {
-        "allow": ["warn", "error"]
-      }
-    ]
+    "import/order": "off"
   }
 }

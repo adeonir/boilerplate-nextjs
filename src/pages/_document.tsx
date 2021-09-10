@@ -15,8 +15,10 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) =>
+            function enhance(props) {
+              return sheet.collectStyles(<App {...props} />)
+            },
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -38,16 +40,11 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <link rel="shortcut" href="/assets/icon-512.png" />
-          <link rel="apple-touch-icon" href="/assets/icon-512.png" />
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-          />
-          <meta
-            name="description"
-            content="A simple project to work with NextJS, React, TypeScript and Styled-Components"
           />
         </Head>
 

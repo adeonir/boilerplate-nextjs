@@ -4,12 +4,10 @@ import { {{pascalCase name}} } from '.'
 
 describe('<{{pascalCase name}} />', () => {
   it('should render correctly', () => {
-    const {
-      container,
-    } = render(<{{pascalCase name}} />)
+    const { container } = render(<{{pascalCase name}} />)
 
     expect(
-      screen.getByRole('heading', { name: /react avançado/i })
+      screen.getByRole('heading', { name: /{{lowerCase name}}/i })
     ).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
