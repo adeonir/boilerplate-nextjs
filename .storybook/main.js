@@ -9,8 +9,10 @@ module.exports = {
   babel: async (options) => ({
     ...options,
     plugins: [
-      ...options.plugins,
-      require.resolve('@babel/plugin-transform-react-jsx'),
+      '@babel/plugin-transform-react-jsx',
+      '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-proposal-private-methods',
+      '@babel/plugin-proposal-private-property-in-object',
     ],
   }),
   webpackFinal: (config) => {
