@@ -59,7 +59,7 @@
     "@types/styled-components": "5.1.15",
     "@typescript-eslint/eslint-plugin": "5.1.0",
     "@typescript-eslint/parser": "5.1.0",
-    "babel-loader": "8.2.2",
+    "babel-loader": "8.2.3",
     "babel-plugin-inline-react-svg": "2.0.1",
     "babel-plugin-styled-components": "1.13.3",
     "chalk": "4.1.2",
