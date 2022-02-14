@@ -63,7 +63,7 @@
     "babel-plugin-inline-react-svg": "2.0.1",
     "babel-plugin-styled-components": "1.13.3",
     "chalk": "4.1.2",
-    "eslint": "8.0.1",
+    "eslint": "8.9.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.25.2",
