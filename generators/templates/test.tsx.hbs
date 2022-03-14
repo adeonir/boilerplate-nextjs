@@ -6,9 +6,7 @@ describe('<{{pascalCase name}} />', () => {
   it('should render correctly', () => {
     const { container } = render(<{{pascalCase name}} />)
 
-    expect(
-      screen.getByRole('heading', { name: /{{lowerCase name}}/i })
-    ).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '{{pascalCase name}}' })).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })

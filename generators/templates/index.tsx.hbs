@@ -1,7 +1,13 @@
 import * as S from './styles'
 
-export const {{pascalCase name}} = () => (
-  <S.{{pascalCase name}}>
-    <h1>{{pascalCase name}}</h1>
-  <S./{{pascalCase name}}>
-)
+export type Props = {
+  name?: string
+}
+
+export function {{pascalCase name}}({ name }: Props) {
+  return (
+    <S.Container>
+      <h1>{{pascalCase name}}: {`${name}`}</h1>
+    </S.Container>
+  )
+}

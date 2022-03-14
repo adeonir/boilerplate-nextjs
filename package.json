@@ -39,6 +39,7 @@
     "styled-components": "5.3.3"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "12.1.0",
     "@storybook/addon-actions": "6.4.19",
     "@storybook/addon-essentials": "6.4.19",
     "@storybook/addon-postcss": "2.0.0",
@@ -55,7 +56,6 @@
     "@types/styled-components": "5.1.24",
     "@typescript-eslint/eslint-plugin": "5.14.0",
     "@typescript-eslint/parser": "5.14.0",
-    "chalk": "5.0.1",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "8.5.0",
