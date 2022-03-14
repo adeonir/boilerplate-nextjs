@@ -1,10 +1,6 @@
-const path = require('path')
-const chalk = require('chalk')
-const { execSync } = require('child_process')
-
 module.exports = (plop) => {
   plop.setGenerator('component', {
-    description: 'application component logic',
+    description: 'Create a component',
     prompts: [
       {
         type: 'input',
@@ -34,23 +30,5 @@ module.exports = (plop) => {
         templateFile: 'templates/test.tsx.hbs',
       },
     ],
-  })
-
-  plop.setActionType('lint', (answers) => {
-    const srcPath = path.join(__dirname, '../src/')
-    const componentName = plop.getHelper('pascalCase')(answers.name)
-    const componentsFiles = path.join(
-      srcPath,
-      'components',
-      componentName,
-      '**'
-    )
-
-    execSync(`prettier --write "${componentsFiles}"`)
-    execSync(`eslint ${componentsFiles} --fix --ext .ts,.tsx`)
-
-    return `\n\n ${chalk.bold.green(
-      componentName
-    )} component successfully created!\n`
   })
 }

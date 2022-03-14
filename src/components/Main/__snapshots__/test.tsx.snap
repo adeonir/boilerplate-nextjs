@@ -50,7 +50,7 @@ exports[`<Main /> should render the heading 1`] = `
   <h2
     class="c2"
   >
-    NextJS, ReactJS, TypeScript, Styled-Components, Storybook and Testing-Library
+    NextJS, ReactJS, TypeScript, Styled-Components, Storybook, Jest and Testing-Library
   </h2>
   <img
     alt="A developer walking and a screen with the text NextJS"
