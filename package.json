@@ -12,8 +12,8 @@
     "test:watch": "jest --maxWorkers=50% --watch",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
-    "storybook": "start-storybook -s ./public -p 6006 --quiet",
-    "storybook:build": "build-storybook -s ./public",
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook",
     "prepare": "husky install"
   },
   "husky": {
@@ -29,7 +29,7 @@
     ]
   },
   "dependencies": {
-    "next": "11.1.2",
+    "next": "12.1.0",
     "next-pwa": "5.4.6",
     "preact": "10.6.6",
     "preact-render-to-string": "5.1.20",
@@ -39,10 +39,6 @@
     "styled-components": "5.3.3"
   },
   "devDependencies": {
-    "@babel/core": "7.15.8",
-    "@babel/preset-env": "7.15.8",
-    "@babel/preset-typescript": "7.15.0",
-    "@babel/runtime": "7.15.4",
     "@storybook/addon-actions": "6.4.19",
     "@storybook/addon-essentials": "6.4.19",
     "@storybook/addon-postcss": "2.0.0",
@@ -59,9 +55,6 @@
     "@types/styled-components": "5.1.24",
     "@typescript-eslint/eslint-plugin": "5.14.0",
     "@typescript-eslint/parser": "5.14.0",
-    "babel-loader": "8.2.2",
-    "babel-plugin-inline-react-svg": "2.0.1",
-    "babel-plugin-styled-components": "1.13.3",
     "chalk": "5.0.1",
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0",
@@ -76,10 +69,7 @@
     "lint-staged": "12.3.5",
     "plop": "3.0.5",
     "prettier": "2.5.1",
-    "storybook-addon-next-router": "3.1.1",
-    "typescript": "4.6.2"
-  },
-  "resolutions": {
-    "webpack": "5"
+    "typescript": "4.6.2",
+    "webpack": "5.70.0"
   }
 }

@@ -2,7 +2,10 @@ const withPWA = require('next-pwa')
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = withPWA({
-  target: 'serverless',
+  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+  },
   pwa: {
     dest: 'public',
     disable: !isProduction,
@@ -10,16 +13,4 @@ module.exports = withPWA({
   images: {
     domains: ['localhost'],
   },
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      Object.assign(config.resolve.alias, {
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
-    }
-
-    return config
-  },
-  generateBuildId: () => 'build',
 })
