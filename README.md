@@ -20,6 +20,7 @@ This is a [Next.js](https://nextjs.org/) boilerplate based in the course [React 
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
+- [Lint-Staged](https://github.com/okonet/lint-staged)
 - [Plop](https://plopjs.com/)
 
 ## Getting Started
@@ -27,10 +28,6 @@ This is a [Next.js](https://nextjs.org/) boilerplate based in the course [React 
 You can use this as a boilerplate:
 
 ```bash
-npx create-next-app -e https://github.com/adeonir/nextjs-boilerplate
-
-# or
-
 yarn create next-app -e https://github.com/adeonir/nextjs-boilerplate
 ```
 
@@ -38,25 +35,34 @@ Then, run the development server:
 
 ```bash
 yarn dev
-
-# or
-
-npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `src/pages/index.tsx`. The page auto-updates as you edit the file.
 
+If you like to try the production build, run:
+
+```
+yarn build
+```
+
+And then:
+
+```
+yarn start
+```
+
 ## Commands
 
 - `dev`: runs your application on `localhost:3000`
 - `build`: creates the production build version
 - `export`: creates the production build version and exports to deploy
-- `serve`: starts a simple server with the build production code
+- `start`: starts a simple server with the build production code
 - `lint`: runs the linter in all components and pages
 - `test`: runs jest to test all components and pages
 - `test:watch`: runs jest in watch mode
+- `typecheck`: runs the typechecker in all components and pages
 - `generate`: runs plop to generate component files
 - `storybook`: runs storybook on `localhost:6006`
 - `storybook:build`: create the build version of storybook

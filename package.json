@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
-    "serve": "next start",
+    "start": "next start",
     "lint": "eslint src --max-warnings=0",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --maxWorkers=50% --watch",
