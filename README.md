@@ -57,7 +57,7 @@ yarn start
 
 - `dev`: runs your application on `localhost:3000`
 - `build`: creates the production build version
-- `export`: creates the production build version and exports to deploy
+- `export`: exports to static files to `out` folder, and can be run standalone
 - `start`: starts a simple server with the build production code
 - `lint`: runs the linter in all components and pages
 - `test`: runs jest to test all components and pages
