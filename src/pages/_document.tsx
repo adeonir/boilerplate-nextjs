@@ -24,12 +24,12 @@ export default class MyDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
-        styles: (
+        styles: [
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
-          </>
-        ),
+          </>,
+        ],
       }
     } finally {
       sheet.seal()
@@ -40,14 +40,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com"
-          />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
