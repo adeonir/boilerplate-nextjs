@@ -3,11 +3,9 @@ import { render, screen } from 'utils/test-utils'
 import { {{pascalCase name}} } from '.'
 
 describe('<{{pascalCase name}} />', () => {
-  it('should render correctly', () => {
-    const { container } = render(<{{pascalCase name}} />)
+  it('renders correctly', () => {
+    render(<{{pascalCase name}} />)
 
     expect(screen.getByRole('heading', { name: '{{pascalCase name}}' })).toBeInTheDocument()
-
-    expect(container.firstChild).toMatchSnapshot()
   })
 })
