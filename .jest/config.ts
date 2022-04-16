@@ -1,3 +1,3 @@
-import '@jest/globals'
-import '@testing-library/jest-dom'
+import 'next-image-mock'
 import 'jest-styled-components'
+import '@testing-library/jest-dom/extend-expect'
