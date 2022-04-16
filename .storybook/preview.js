@@ -1,6 +1,8 @@
-import '../.jest/next-image.mock'
 import { RouterContext } from 'next/dist/shared/lib/router-context'
-import { GlobalStyles } from 'styles'
+import { ThemeProvider } from 'styled-components'
+
+import '../.jest/next-image.mock'
+import { GlobalStyles, theme } from '../src/styles'
 
 export const parameters = {
   nextRouter: {
@@ -10,9 +12,9 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Story />
-    </>
+    </ThemeProvider>
   ),
 ]
