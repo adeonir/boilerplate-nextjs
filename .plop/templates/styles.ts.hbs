@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-
-import { theme } from 'styles'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
-  max-width: ${theme.grid.container};
+  ${({ theme }) => css`
+    max-width: ${theme.grid.container};
+  `}
 `
