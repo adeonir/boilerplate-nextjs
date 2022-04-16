@@ -5,8 +5,12 @@ import { ThemeProvider } from 'styled-components'
 
 import { theme } from 'styles'
 
-const customRender = (children: ReactElement): RenderResult =>
-  render(<ThemeProvider theme={theme}>{children}</ThemeProvider>)
+const customRender = (ui: ReactElement): RenderResult =>
+  render(ui, {
+    wrapper: ({ children }) => (
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    ),
+  })
 
 export * from '@testing-library/react'
 export { customRender as render, userEvent }
