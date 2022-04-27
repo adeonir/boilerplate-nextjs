@@ -19,6 +19,7 @@ tsconfig.tsbuildinfo
 # misc
 .DS_Store
 .vscode
+.idea
 *.pem
 
 # debug
