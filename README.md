@@ -1,5 +1,5 @@
-<p align="center">
-  <img src=".github/assets/hero-illustration.svg" atl="A developer walking and a screen with the text NextJS" />
+<p style="text-align: center">
+  <img src=".github/assets/hero-illustration.svg" alt="A developer walking and a screen with the text NextJS" />
 </p>
 
 # NextJS Boilerplate
@@ -62,7 +62,7 @@ yarn start
 - `lint`: runs the linter in all components and pages
 - `test`: runs jest to test all components and pages
 - `test:watch`: runs jest in watch mode
-- `typecheck`: runs the typechecker in all components and pages
+- `typecheck`: runs the type checker in all components and pages
 - `generate`: runs plop to generate component files
 - `storybook`: runs storybook on `localhost:6006`
 - `storybook:build`: create the build version of storybook
