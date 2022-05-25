@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components'
 
-export const Container = styled.div`
+import type { {{pascalCase name}}Props } from './{{pascalCase name}}'
+
+export const Box = styled.div<{{pascalCase name}}Props>`
   ${({ theme }) => css`
-    max-width: ${theme.grid.container};
+    padding: ${theme.spacing[4]};
   `}
 `
