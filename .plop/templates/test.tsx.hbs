@@ -1,11 +1,12 @@
-import { render, screen } from 'utils/tests'
+import { render, screen } from '~/utils/tests'
 
 import { {{pascalCase name}} } from '.'
 
 describe('<{{pascalCase name}} />', () => {
-  it('renders correctly', () => {
-    render(<{{pascalCase name}} />)
+  it('renders', () => {
+    render(<{{pascalCase name}} prop="{{lowerCase name}}" />)
 
-    expect(screen.getByRole('heading', { name: '{{pascalCase name}}' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /{{lowerCase name}}/i })).toBeInTheDocument()
   })
 })
+

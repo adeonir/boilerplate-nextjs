@@ -1,4 +1,4 @@
-import { render, screen } from 'utils/tests'
+import { render, screen } from '~/utils/tests'
 
 import { Main } from '.'
 

@@ -18,22 +18,27 @@ module.exports = (plop) => {
     actions: [
       {
         type: 'add',
-        path: 'src/components/{{pascalCase name}}/index.tsx',
-        templateFile: '.plop/templates/index.tsx.hbs',
+        path: 'src/components/{{properCase name}}/index.ts',
+        templateFile: '.plop/templates/index.ts.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{pascalCase name}}/stories.tsx',
-        templateFile: '.plop/templates/stories.tsx.hbs',
+        path: 'src/components/{{properCase name}}/{{properCase name}}.tsx',
+        templateFile: '.plop/templates/component.tsx.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{pascalCase name}}/styles.ts',
+        path: 'src/components/{{properCase name}}/{{properCase name}}.styles.ts',
         templateFile: '.plop/templates/styles.ts.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{pascalCase name}}/test.tsx',
+        path: 'src/components/{{properCase name}}/{{properCase name}}.stories.tsx',
+        templateFile: '.plop/templates/stories.tsx.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/components/{{properCase name}}/{{properCase name}}.test.tsx',
         templateFile: '.plop/templates/test.tsx.hbs',
       },
     ],
