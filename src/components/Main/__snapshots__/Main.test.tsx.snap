@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1
 
-exports[`<Main /> renders the heading 1`] = `
+exports[`<Main /> > renders the heading 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
