@@ -47,6 +47,73 @@
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
     "import/first": "error",
-    "import/order": "off"
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            },
+            "group": "external"
+          },
+          {
+            "pattern": "~/utils/**",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            },
+            "group": "internal"
+          },
+          {
+            "pattern": "~/pages/**",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            },
+            "group": "internal"
+          },
+          {
+            "pattern": "~/components/**",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            },
+            "group": "internal"
+          },
+          {
+            "pattern": "~/styles/**",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            },
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ]
   }
 }
