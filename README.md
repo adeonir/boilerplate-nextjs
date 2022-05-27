@@ -28,7 +28,7 @@ This is a [Next.js](https://nextjs.org/) boilerplate based on the course [React 
 You can use this as a boilerplate:
 
 ```
-npx degit https://github.com/adeonir/nextjs-boilerplate my-project
+npx degit https://github.com/adeonir/boilerplate-nextjs my-project
 ```
 
 Then, run the development server:
