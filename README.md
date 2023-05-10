@@ -60,13 +60,11 @@ yarn start
 - `export`: exports to static files to `out` folder, and can be run standalone
 - `start`: starts a simple server with the build production code
 - `lint`: runs the linter in all components and pages
-- `format`: runs prettier to format all components and pages
-- `test`: runs vitest in watch mode
-- `test:coverage`: runs vitest with coverage table
-- `test:ci`: runs vitest once on CI
+- `test`: runs vitest once
+- `watch`: runs vitest in watch mode
+- `coverage`: runs vitest with coverage table
 - `generate`: runs plop to generate component files
 - `storybook`: runs storybook on `localhost:6006`
-- `storybook:build`: create the production build of storybook
 
 ---
 

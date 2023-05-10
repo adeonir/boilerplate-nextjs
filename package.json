@@ -14,8 +14,7 @@
     "coverage": "vitest run --coverage",
     "generate": "plop",
     "storybook": "storybook dev -p 6006",
-    "prepare": "is-ci || husky install",
-    "build-storybook": "storybook build"
+    "prepare": "is-ci || husky install"
   },
   "dependencies": {
     "next": "13.4.1",
