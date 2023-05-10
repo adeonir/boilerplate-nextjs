@@ -1,4 +1,4 @@
-import { theme } from '~/styles'
+import type { theme } from '~/styles'
 
 type Theme = typeof theme
 

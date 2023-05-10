@@ -1,17 +1,19 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 
 import { Main } from '.'
 
-export default {
+const meta = {
   title: 'Main',
   component: Main,
-} as ComponentMeta<typeof Main>
+} satisfies Meta<typeof Main>
 
-const Template: ComponentStory<typeof Main> = (args) => <Main {...args} />
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Default = Template.bind({})
-Default.args = {
-  title: 'NextJS Boilerplate',
-  description:
-    'NextJS, ReactJS, TypeScript, Styled-Components, Storybook, Jest and Testing-Library',
+export const Default: Story = {
+  args: {
+    title: 'NextJS Boilerplate',
+    description:
+      'NextJS, ReactJS, TypeScript, Styled-Components, Storybook, Jest and Testing-Library',
+  },
 }

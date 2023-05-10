@@ -9,6 +9,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 const resolve = (path: string) => pathResolve(__dirname, path)
 
+// eslint-disable-next-line import/no-default-export
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   resolve: {
@@ -20,5 +21,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './vitest.setup.ts',
+    include: [resolve('src/**/*.test.@(ts|tsx)')],
+    // resolveSnapshotPath: (testPath, snapExtension) => testPath + snapExtension,
   },
 })

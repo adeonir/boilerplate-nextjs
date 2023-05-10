@@ -1,9 +1,8 @@
 {
   "env": {
+    "node": true,
     "browser": true,
-    "es6": true,
-    "jest": true,
-    "node": true
+    "es6": true
   },
   "settings": {
     "react": {
@@ -13,10 +12,11 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "plugin:@next/next/recommended"
+    "plugin:@next/next/recommended",
+    "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -26,26 +26,27 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "import", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "import",
+    "prettier"
+  ],
   "rules": {
     "no-undef": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-member-accessibility": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-var-requires": "off",
-    "@typescript-eslint/camelcase": "off",
+    "import/no-default-export": "error",
     "import/prefer-default-export": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
-    "react/jsx-one-expression-per-line": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/jsx-uses-react": "off",
+    "react/display-name": "off",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react/require-default-props": "off",
     "import/first": "error",
     "import/order": [
       "error",
@@ -57,50 +58,33 @@
           "internal",
           "parent",
           "sibling",
-          "index",
-          "object",
-          "type"
+          "index"
         ],
         "pathGroups": [
           {
             "pattern": "react",
-            "patternOptions": {
-              "partial": true,
-              "nocomment": true
-            },
-            "group": "external"
-          },
-          {
-            "pattern": "~/utils/**",
-            "patternOptions": {
-              "partial": true,
-              "nocomment": true
-            },
-            "group": "internal"
+            "group": "external",
+            "position": "before"
           },
           {
             "pattern": "~/pages/**",
-            "patternOptions": {
-              "partial": true,
-              "nocomment": true
-            },
-            "group": "internal"
+            "group": "internal",
+            "position": "before"
           },
           {
             "pattern": "~/components/**",
-            "patternOptions": {
-              "partial": true,
-              "nocomment": true
-            },
-            "group": "internal"
+            "group": "internal",
+            "position": "before"
           },
           {
             "pattern": "~/styles/**",
-            "patternOptions": {
-              "partial": true,
-              "nocomment": true
-            },
-            "group": "internal"
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "~/utils/**",
+            "group": "internal",
+            "position": "before"
           }
         ],
         "pathGroupsExcludedImportTypes": ["builtin"],
@@ -115,5 +99,13 @@
         "ignoreDeclarationSort": true
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/pages/**/*", "src/**/*.stories.tsx", "./.storybook/**/*"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
 }

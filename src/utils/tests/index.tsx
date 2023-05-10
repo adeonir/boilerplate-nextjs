@@ -1,11 +1,8 @@
-import {
-  RenderOptions,
-  RenderResult,
-  cleanup,
-  render,
-} from '@testing-library/react'
+import type { ReactElement } from 'react'
+
+import type { RenderOptions, RenderResult } from '@testing-library/react'
+import { cleanup, render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { ReactElement } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { afterEach } from 'vitest'
 
