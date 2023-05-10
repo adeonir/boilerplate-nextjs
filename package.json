@@ -12,7 +12,6 @@
     "test": "vitest run",
     "watch": "vitest watch",
     "coverage": "vitest run --coverage",
-    "test:ci": "vitest --run",
     "generate": "plop",
     "storybook": "storybook dev -p 6006",
     "prepare": "is-ci || husky install",
