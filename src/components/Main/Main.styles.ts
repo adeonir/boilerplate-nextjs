@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styled, { css } from 'styled-components'
 
 export const Container = styled.main`
@@ -28,7 +29,7 @@ export const Description = styled.h2`
   `}
 `
 
-export const Illustration = styled.img`
+export const Illustration = styled(Image)`
   ${({ theme }) => css`
     margin-top: ${theme.spacing[16]};
     width: min(40rem, 100%);

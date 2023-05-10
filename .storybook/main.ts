@@ -1,26 +1,35 @@
-const { resolve } = require('path')
+import { resolve as pathResolve } from 'path'
 
-const { loadConfigFromFile, mergeConfig } = require('vite')
+import type { StorybookConfig } from '@storybook/nextjs'
 
-module.exports = {
-  stories: ['../src/**/*.stories.tsx'],
+const resolve = (path: string) => pathResolve(__dirname, path)
+
+const config: StorybookConfig = {
+  staticDirs: [resolve('../public')],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: '@storybook/builder-vite',
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
   },
-  viteFinal: async (config) => {
-    const { config: userConfig } = await loadConfigFromFile(
-      resolve(__dirname, '../.vite.config.js')
-    )
-
-    return mergeConfig(config, {
-      ...userConfig,
-      plugins: [],
-    })
+  docs: {
+    autodocs: 'tag',
+  },
+  core: {
+    disableTelemetry: true,
+  },
+  webpackFinal: (config) => {
+    // @ts-ignore
+    config.resolve.alias = {
+      ...config.resolve?.alias,
+      '~': [resolve('../src/'), resolve('../')],
+    }
+    return config
   },
 }
+
+export default config
