@@ -34,7 +34,7 @@ npx degit https://github.com/adeonir/boilerplate-nextjs my-project
 Then, run the development server:
 
 ```
-yarn dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -44,13 +44,13 @@ You can start editing the page by modifying `src/pages/index.tsx`. The page auto
 If you like to try the production build, run:
 
 ```
-yarn build
+pnpm build
 ```
 
 And then:
 
 ```
-yarn start
+pnpm start
 ```
 
 ## Commands
