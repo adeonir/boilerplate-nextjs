@@ -1,12 +1,13 @@
 {
   "name": "boilerplate-nextjs",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "is-ci || husky install"
   },
   "dependencies": {
     "@types/node": "20.5.9",
@@ -30,6 +31,9 @@
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-react": "7.33.2",
     "eslint-plugin-simple-import-sort": "10.0.0",
+    "husky": "^8.0.0",
+    "is-ci": "3.0.1",
+    "lint-staged": "14.0.1",
     "prettier": "3.0.3",
     "prettier-plugin-tailwindcss": "0.5.4"
   }
