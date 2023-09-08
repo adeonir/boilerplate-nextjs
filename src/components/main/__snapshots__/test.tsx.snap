@@ -19,7 +19,7 @@ exports[`<Main /> > should render the headings 1`] = `
     </h2>
   </div>
   <img
-    alt="A developer walking and a screen with the text NextJS"
+    alt="A developer walking and a screen with the text Next.js"
     class="w-full min-w-10 max-w-2xl"
     data-nimg="1"
     decoding="async"

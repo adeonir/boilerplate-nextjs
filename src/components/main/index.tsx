@@ -17,7 +17,7 @@ export const Main = ({ title, description }: Props) => {
         width="432"
         height="328"
         src="/assets/hero-illustration.svg"
-        alt="A developer walking and a screen with the text NextJS"
+        alt="A developer walking and a screen with the text Next.js"
         className="w-full min-w-10 max-w-2xl"
       />
     </main>
