@@ -11,6 +11,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'next/core-web-vitals',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended'
   ],
   overrides: [
     {
