@@ -3,8 +3,8 @@ import { render, screen } from '~/utils/tests'
 import { Main } from '.'
 
 const props = {
-  title: 'NextJS Boilerplate',
-  description: 'NextJS, ReactJS, TypeScript, Styled-Components, Storybook, Jest and Testing-Library',
+  title: 'Next.js Boilerplate',
+  description: 'Next.js, TypeScript, Tailwind, Storybook, Vitest, Cypress and Testing-Library',
 }
 
 describe('<Main />', () => {

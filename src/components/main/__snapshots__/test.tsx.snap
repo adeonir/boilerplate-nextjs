@@ -10,12 +10,12 @@ exports[`<Main /> > should render the headings 1`] = `
     <h1
       class="text-4xl font-bold"
     >
-      NextJS Boilerplate
+      Next.js Boilerplate
     </h1>
     <h2
       class="text-xl"
     >
-      NextJS, ReactJS, TypeScript, Styled-Components, Storybook, Jest and Testing-Library
+      Next.js, TypeScript, Tailwind, Storybook, Vitest, Cypress and Testing-Library
     </h2>
   </div>
   <img

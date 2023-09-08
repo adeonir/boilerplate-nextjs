@@ -16,6 +16,6 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     title: 'Next.js Boilerplate',
-    description: 'Next.js, TypeScript, Tailwind, Storybook, Vitest and Testing-Library',
+    description: 'Next.js, TypeScript, Tailwind, Storybook, Vitest, Cypress and Testing-Library',
   },
 }
