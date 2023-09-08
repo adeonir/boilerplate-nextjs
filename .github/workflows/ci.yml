@@ -8,28 +8,7 @@ on:
       - 'main'
 
 jobs:
-  install:
-    name: Install
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v3
-
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
-
   lint:
-    needs: install
     name: Lint
     runs-on: ubuntu-latest
 
@@ -37,14 +16,26 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - uses: actions/setup-node@v3
+      - name: Get pnpm cache directory path
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
         with:
-          node-version: 18
-          cache: 'pnpm'
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         run: pnpm install
@@ -53,7 +44,6 @@ jobs:
         run: pnpm lint
 
   test:
-    needs: install
     name: Test unit
     runs-on: ubuntu-latest
 
@@ -61,14 +51,20 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - uses: actions/setup-node@v3
+      - uses: actions/cache@v3
         with:
-          node-version: 18
-          cache: 'pnpm'
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         run: pnpm install
@@ -77,23 +73,35 @@ jobs:
         run: pnpm test:unit
 
   e2e:
-    needs: install
     name: Test e2e
     runs-on: ubuntu-latest
-    container: cypress/browsers:node18.12.0-chrome107
+    container:
+      image: cypress/browsers:latest
+      options: --user 1001
 
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - uses: actions/setup-node@v3
+      - uses: actions/cache@v3
         with:
-            node-version: 18
-            cache: 'pnpm'
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install dependencies
         run: pnpm install
@@ -102,7 +110,7 @@ jobs:
         run: pnpm test:ci
 
   build:
-    needs: [install, lint, test, e2e]
+    needs: [lint, test, e2e]
     name: Build
     runs-on: ubuntu-latest
 
@@ -110,14 +118,20 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@v3
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - uses: actions/setup-node@v3
+      - uses: actions/cache@v3
         with:
-            node-version: 18
-            cache: 'pnpm'
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
         run: pnpm install
