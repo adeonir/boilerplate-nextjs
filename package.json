@@ -10,6 +10,7 @@
     "test": "vitest run",
     "watch": "vitest watch",
     "coverage": "vitest run --coverage",
+    "coverage:preview": "serve coverage -l 3001",
     "generate": "plop",
     "prepare": "is-ci || husky install",
     "storybook": "storybook dev -p 6006",
