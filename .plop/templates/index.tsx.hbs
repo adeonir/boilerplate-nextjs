@@ -1,0 +1,11 @@
+export type Props = {
+  title: string
+}
+
+export function {{pascalCase name}}({ title = '{{titleCase name}}' }: Props) {
+  return (
+    <div>
+      <h1>{title}</h1>
+    </div>
+  )
+}
