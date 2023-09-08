@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest run --passWithNoTests",
+    "test": "vitest run",
     "watch": "vitest watch",
     "coverage": "vitest run --coverage",
     "prepare": "is-ci || husky install"

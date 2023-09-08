@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Main /> > should render the headings 1`] = `
+<main
+  class="flex h-full flex-col items-center justify-center gap-4 bg-blue-950 p-16 text-center text-white"
+>
+  <h1>
+    NextJS Boilerplate
+  </h1>
+  <h2>
+    NextJS, ReactJS, TypeScript, Styled-Components, Storybook, Jest and Testing-Library
+  </h2>
+  <img
+    alt="A developer walking and a screen with the text NextJS"
+    class="w-full min-w-10"
+    data-nimg="1"
+    decoding="async"
+    height="328"
+    loading="lazy"
+    src="/assets/hero-illustration.svg"
+    style="color: transparent;"
+    width="432"
+  />
+</main>
+`;
