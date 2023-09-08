@@ -6,7 +6,7 @@
 
 ---
 
-This is a [Next.js](https://nextjs.org/) boilerplate based on the course [React Avançado](https://reactavancado.com.br), with some flavors like Tailwind, Storybook, Vitest and Testing-Library.
+This is a [Next.js](https://nextjs.org/) boilerplate based on the course [React Avançado](https://reactavancado.com.br), with some flavors like Tailwind, Storybook, Vitest, Cypress and Testing-Library.
 
 ## What is inside?
 
@@ -17,6 +17,7 @@ This is a [Next.js](https://nextjs.org/) boilerplate based on the course [React 
 - [Storybook](https://storybook.js.org/)
 - [Vitest](https://vitest.dev/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- [Cypress](https://www.cypress.io/)
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)

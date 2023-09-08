@@ -20,5 +20,5 @@
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "portrait",
-  "description": "Boilerplate using Next.js, TypeScript, Tailwind, Storybook, Vitest and Testing-Library"
+  "description": "Boilerplate using Next.js, TypeScript, Tailwind, Storybook, Vitest, Cypress and Testing-Library"
 }

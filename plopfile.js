@@ -6,7 +6,7 @@ module.exports = async (plop) => {
       {
         type: 'input',
         name: 'name',
-        message: 'Name is your component name?',
+        message: 'What is your component name?',
         validate: (value) => {
           if (/.+/.test(value)) {
             return true

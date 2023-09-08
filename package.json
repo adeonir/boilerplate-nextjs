@@ -13,7 +13,7 @@
     "coverage:preview": "serve coverage -l 3001",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:test": "server-test dev http://localhost:3000 'pnpm cy:run'",
+    "cy:test": "start-test dev http://localhost:3000 'pnpm cypress run'",
     "generate": "plop",
     "prepare": "is-ci || husky install",
     "storybook": "storybook dev -p 6006",
