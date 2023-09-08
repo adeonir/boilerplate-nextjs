@@ -54,7 +54,7 @@ jobs:
 
   test:
     needs: install
-    name: Test
+    name: Test unit
     runs-on: ubuntu-latest
 
     steps:
@@ -74,7 +74,7 @@ jobs:
         run: pnpm install
 
       - name: Run test
-        run: pnpm test
+        run: pnpm test:unit
 
   e2e:
     needs: install
@@ -99,7 +99,7 @@ jobs:
         run: pnpm install
 
       - name: Run cypress
-        run: pnpm cy:test
+        run: pnpm test:ci
 
   build:
     needs: [install, lint, test, e2e]

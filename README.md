@@ -58,14 +58,17 @@ pnpm start
 
 ## Commands
 
-- `dev`: runs your application on `localhost:3000`
+- `dev`: runs your application in development mode
 - `build`: creates the production build
 - `start`: starts a simple server with the build production code
 - `lint`: runs the linter in all components and pages
-- `test`: runs vitest once
-- `watch`: runs vitest in watch mode
+- `test:unit`: runs vitest once
+- `watch:unit`: runs vitest in watch mode
 - `coverage`: runs vitest creating a coverage report
 - `coverage:preview`: starts a server with the coverage report files
+- `test:e2e`: runs cypress once
+- `watch:e2e`: runs cypress in watch mode
+- `test:ci`: runs cypress within the CI
 - `generate`: runs plop to generate component files
 - `storybook`: runs storybook on `localhost:6006`
 - `storybook:build`: builds the storybook
