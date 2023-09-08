@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'next/core-web-vitals',
     'plugin:prettier/recommended',
   ],
@@ -32,7 +33,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['@typescript-eslint', 'react', 'simple-import-sort', 'import'],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'import'],
   rules: {
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
