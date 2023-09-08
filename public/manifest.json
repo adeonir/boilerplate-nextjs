@@ -1,0 +1,24 @@
+{
+  "name": "NextJS Boilerplate",
+  "short_name": "NextJS Boilerplate",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#172554",
+  "background_color": "#172554",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "description": "Boilerplate using Next.js, TypeScript, Tailwind, Storybook, Vitest and Testing-Library"
+}
