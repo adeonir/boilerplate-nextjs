@@ -1,10 +1,9 @@
-import { withThemeFromJSXProvider } from '@storybook/addon-styling'
+import '../src/styles/globals.css'
+
+import { withThemeByClassName } from '@storybook/addon-styling'
 import type { Preview } from '@storybook/react'
-import { ThemeProvider } from 'styled-components'
 
-import { GlobalStyles, theme } from '../src/styles'
-
-export const preview: Preview = {
+const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -14,14 +13,15 @@ export const preview: Preview = {
       },
     },
   },
+  decorators: [
+    withThemeByClassName({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+    }),
+  ],
 }
 
-export const decorators = [
-  withThemeFromJSXProvider({
-    GlobalStyles,
-    Provider: ThemeProvider,
-    themes: {
-      light: theme,
-    },
-  }),
-]
+export default preview

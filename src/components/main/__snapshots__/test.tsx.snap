@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Main /> > should render the headings 1`] = `
+<main
+  class="flex h-full flex-col items-center justify-center gap-16 bg-blue-950 p-16 text-center text-white"
+>
+  <div
+    class="flex flex-col items-center justify-center gap-4"
+  >
+    <h1
+      class="text-4xl font-bold"
+    >
+      Next.js Boilerplate
+    </h1>
+    <h2
+      class="text-xl"
+    >
+      Next.js, TypeScript, Tailwind, Storybook, Vitest, Cypress and Testing-Library
+    </h2>
+  </div>
+  <img
+    alt="A developer walking and a screen with the text Next.js"
+    class="w-full min-w-10 max-w-2xl"
+    data-nimg="1"
+    decoding="async"
+    height="328"
+    loading="lazy"
+    src="/assets/hero-illustration.svg"
+    style="color: transparent;"
+    width="432"
+  />
+</main>
+`;

@@ -11,7 +11,6 @@
 # next.js
 /.next/
 /out/
-tsconfig.tsbuildinfo
 
 # production
 /build
@@ -28,17 +27,18 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# sw stuff
-public/sw.js
-public/workbox-*.js
+.env*.local
 
 # vercel
 .vercel
 
-# Local Netlify folder
-.netlify
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# storybook
+/storybook-static
+
+# cypress
+/cyperss/screenshots
+/cypress/videos

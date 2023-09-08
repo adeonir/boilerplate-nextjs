@@ -1,12 +1,12 @@
 // eslint-disable-next-line import/no-default-export
-module.exports = (plop) => {
+module.exports = async (plop) => {
   plop.setGenerator('component', {
     description: 'Create a new component',
     prompts: [
       {
         type: 'input',
         name: 'name',
-        message: 'Name of the component?',
+        message: 'What is your component name?',
         validate: (value) => {
           if (/.+/.test(value)) {
             return true
@@ -18,29 +18,24 @@ module.exports = (plop) => {
     actions: [
       {
         type: 'add',
-        path: 'src/components/{{properCase name}}/index.ts',
-        templateFile: '.plop/templates/index.ts.hbs',
+        path: 'src/components/{{kebabCase name}}/index.tsx',
+        templateFile: '.plop/templates/index.tsx.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{properCase name}}/{{properCase name}}.tsx',
-        templateFile: '.plop/templates/component.tsx.hbs',
-      },
-      {
-        type: 'add',
-        path: 'src/components/{{properCase name}}/{{properCase name}}.styles.ts',
-        templateFile: '.plop/templates/styles.ts.hbs',
-      },
-      {
-        type: 'add',
-        path: 'src/components/{{properCase name}}/{{properCase name}}.stories.tsx',
+        path: 'src/components/{{kebabCase name}}/stories.tsx',
         templateFile: '.plop/templates/stories.tsx.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{properCase name}}/{{properCase name}}.test.tsx',
+        path: 'src/components/{{kebabCase name}}/test.tsx',
         templateFile: '.plop/templates/test.tsx.hbs',
       },
+      {
+        type: 'eslint',
+        path: 'src/components/{{kebabCase name}}/*.tsx',
+      },
     ],
-  })
+  }),
+    await plop.load('plop-action-eslint')
 }

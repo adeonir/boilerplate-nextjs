@@ -4,9 +4,8 @@ import { {{pascalCase name}} } from '.'
 
 describe('<{{pascalCase name}} />', () => {
   it('renders', () => {
-    render(<{{pascalCase name}} prop="{{lowerCase name}}" />)
+    render(<{{pascalCase name}} title="{{lowerCase name}}" />)
 
     expect(screen.getByRole('heading', { name: /{{lowerCase name}}/i })).toBeInTheDocument()
   })
 })
-

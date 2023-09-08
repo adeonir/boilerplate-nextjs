@@ -1,3 +1,4 @@
-!.jest
-!.snap
 !.storybook
+.next
+build
+coverage

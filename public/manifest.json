@@ -15,10 +15,10 @@
       "purpose": "any maskable"
     }
   ],
-  "theme_color": "#051330",
-  "background_color": "#051330",
+  "theme_color": "#172554",
+  "background_color": "#172554",
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "portrait",
-  "description": "Boilerplate using NextJS, ReactJS, TypeScript, Styled-Components, Storybook and Testing-Library"
+  "description": "Boilerplate using Next.js, TypeScript, Tailwind, Storybook, Vitest, Cypress and Testing-Library"
 }

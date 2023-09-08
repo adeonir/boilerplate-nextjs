@@ -1,44 +1,29 @@
 name: ci
+
 on:
   pull_request:
+    types: [opened, synchronize]
   push:
     branches:
       - 'main'
 
 jobs:
   install:
-    name: Install dependencies
+    name: Install
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out git repository
+      - name: Checkout git repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 18.x
+          version: 8
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
+      - uses: actions/setup-node@v3
         with:
-          version: 7.x
-          run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          node-version: 18
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
@@ -49,33 +34,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out git repository
+      - name: Checkout git repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 18.x
+          version: 8
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
+      - uses: actions/setup-node@v3
         with:
-          version: 7.x
-          run_install: false
-
-      - uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+          node-version: 18
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Running lint
+      - name: Run lint
         run: pnpm lint
 
   test:
@@ -84,74 +58,69 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out git repository
+      - name: Checkout git repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 18.x
+          version: 8
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
+      - uses: actions/setup-node@v3
         with:
-          version: 7.x
-          run_install: false
-
-      - uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Get number of CPU cores
-        id: cpu-cores
-        uses: SimenB/github-actions-cpu-cores@v1
+          node-version: 18
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Running test
+      - name: Run test
         run: pnpm test
 
-  build:
+  e2e:
     needs: install
+    name: Test e2e
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node18.12.0-chrome107
+
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - uses: actions/setup-node@v3
+        with:
+            node-version: 18
+            cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run cypress
+        run: pnpm cy:test
+
+  build:
+    needs: [install, lint, test, e2e]
     name: Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out git repository
+      - name: Checkout git repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 18.x
+          version: 8
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
+      - uses: actions/setup-node@v3
         with:
-          version: 7.x
-          run_install: false
-
-      - uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Get number of CPU cores
-        id: cpu-cores
-        uses: SimenB/github-actions-cpu-cores@v1
+            node-version: 18
+            cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Running build
+      - name: Run build
         run: pnpm build

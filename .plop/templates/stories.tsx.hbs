@@ -2,13 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { {{pascalCase name}} } from '.'
 
-export default {
-  title: '{{pascalCase name}}',
-  component: {{pascalCase name}},
-} as ComponentMeta<typeof {{pascalCase name}}>
-
 const meta = {
-  title: '{{pascalCase name}}',
+  title: '{{titleCase name}}',
   component: {{pascalCase name}},
 } satisfies Meta<typeof {{pascalCase name}}>
 
@@ -16,5 +11,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
-  args: {},
+  args: {
+    title: '{{titleCase name}}',
+  },
 }
