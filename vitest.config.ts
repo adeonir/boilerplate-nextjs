@@ -23,7 +23,7 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['html'],
-      include: ['src/**/*.{ts,tsx}'],
+      include: ['src/**/*.tsx'],
     },
   },
 })
